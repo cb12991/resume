@@ -1,0 +1,259 @@
+---
+surname: 'Cody B. Buehler'
+phone: 816-558-2679
+www: codybuehler.me
+email: 'cb12991@me.com'
+github: cb12991
+linkedin: codybuehler
+date: '`r format(Sys.time(), "%B %Y")`'
+output: 
+  vitae::awesomecv:
+    page_total: FALSE
+    keep_tex: TRUE
+    
+docname: 'Resume'
+headcolor: 414141 #08004f
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+cbmisc::pak_load(vitae)
+
+make_detailed_section <- function(
+  ...,
+  order = 1:4,
+  detailVector = 'Details',
+  bulletVector = 'Bullets'
+) { 
+  args <- list(...)
+  if (length(args) == 0) {
+    stop("Function requires arguments")
+  } 
+  for (i in length(args)) {
+    if (!is.list(args[[i]])) {
+      stop(paste("Argument", i, "is not a list."))
+    }
+  }
+  df <- vector("list")
+  
+  for (i in 1:length(args)) {
+    df[[i]] <- data.frame(
+      What = args[[i]][[detailVector]][[order[[1]]]], 
+      When = args[[i]][[detailVector]][[order[[2]]]], 
+      With = args[[i]][[detailVector]][[order[[3]]]], 
+      Where = args[[i]][[detailVector]][[order[[4]]]], 
+      Why = args[[i]][[bulletVector]][seq_along(args[[i]][[bulletVector]])]
+    )
+  }
+  detailed_entries(
+    data = do.call(rbind.data.frame, df),
+    what = What,
+    when = When,
+    with = With, 
+    where = Where,
+    why = Why
+  )
+}
+```
+
+# Work Experience
+
+```{r}
+# To reflect promotions, simply change the "with" and "where" arguments to "".
+# That'll keep everything grouped under the same header.
+ameritas_sr <- list(
+  Details = c(
+    paste(
+      'Sr. Actuarial Associate - Experience Studies and Assumption Setting,',
+      'Corporate Actuarial'
+    ),
+    'October 2021 – Present',
+    'Ameritas Life Insurance Corporation - Full Time',
+    'Lincoln, Nebraska'
+  ),
+  Bullets = c(
+    'Review corporate assumptions in-depth.',
+    paste(
+      'Develop enhancements to current assumptions using machine learning or ',
+      'applied statistical theory.'
+    ),
+    'Assist interns with annual updates of corporate assumptions.'
+  )
+)
+ameritas_esa <- list(
+  Details = c(
+    paste(
+      'Actuarial Associate - Experience Studies and Assumption Setting,',
+      'Corporate Actuarial'
+    ),
+    'September 2020 - October 2021',
+    '',
+    ''
+  ),
+  Bullets = c(
+    'Ran multi-year experience studies for life and annuity products.',
+    'Update corporate assumptions using current econmic and company data.',
+    'Propose recommendations to corporate subcommittee.'
+  )
+)
+ameritas_val <- list(
+  Details = c(
+    'Actuarial Assistant - Valuation, Corporate Actuarial',
+    'June 2017 – September 2020',
+    '',
+    ''
+  ),
+  Bullets = c(
+    'Assisted valuation team with annual and quarterly reporting obligations.', 
+    'Compiled monthly in-force report to company officials and associates.',
+    'Responded to industry survey requests as well as internal/external audits.'
+  )
+)
+ameritas_uw <- list(
+  Details = c(
+    'Underwriting Coordinator - Business Development Underwriting',
+    'July 2016 - June 2017',
+    '',
+    ''
+  ),
+  Bullets = c(
+    paste(
+      'Coordinated delivery of required documents for group dental and vision',
+      'insurance requests for proposal.'
+    ),
+    paste(
+      'Developed macros to help team reduce turn-around-times and a front-end',
+      'GUI, back-end database for the tracking of sold cases.'
+    )
+  )
+)
+rogers_gh <- list(
+  Details = c(
+    'Sacker/Cashier/Stocker/Grocery Clerk/Meat Cutter',
+    'June 2007 – August 2016',
+    'Roger’s Green Hills - Part Time Academic Year/Full Time',
+    'St. Joseph, Missouri'
+  ),
+  Bullets = c(
+    'Provided excellent customer service for customers.',
+    paste(
+      'Progressed through multiple departments, each having additional',
+      'responsibilities.'
+    ),
+    'Guided new employees during the onboarding process.'
+  )
+)
+# sjsa <- list(
+#   Details = c(
+#     'Soccer Referee',
+#     'May 2002 – June 2007',
+#     'St. Joseph Soccer Association - Part Time',
+#     'St. Joseph, Missouri'
+#   ),
+#   Bullets = c(
+#     'Acquired this position while only eleven years old.',
+#     'Constituted firm decision-making skills.'
+#   )
+# )
+make_detailed_section(
+  ameritas_sr, ameritas_esa, ameritas_val, ameritas_uw, rogers_gh#, sjsa
+)
+```
+
+# Education
+
+```{r}
+unl <- list(
+  Details = c(
+    'Master of Science - Actuarial Science Major, Statistics & Finance Minors',
+    'August 2016 - May 2018',
+    'University of Nebraska - Lincoln',
+    'Lincoln, Nebraska'
+  ),
+  Bullets = NA
+)
+
+mwsu <- list(
+  Details = c(
+    'Bachelor of Science - Mathematics Major',
+    'August 2011 - May 2015',
+    'Missouri Western State University',
+    'St. Joseph, Missouri'
+  ),
+  Bullets = NA
+)
+make_detailed_section(unl, mwsu)
+```
+
+# Technical Skills
+
+```{r}
+prog_langs <- list(
+  Details = c(NA, NA, 'Programming Languages', NA),
+  Bullets = c(
+    'Specializing in R.',
+    'Proficient in Python, SQL, VBA, Markdown, and Git.',
+    paste(
+      'Experience with Java, Bash/shell scripting, M (PowerQuery), LaTeX, and',
+      'HTML.'
+    )
+  )
+)
+packages <- list(
+  Details = c(NA, NA, 'Package Development', NA),
+  Bullets = c(
+    'Author/maintainer of R package `expstudy` (available on CRAN).',
+    paste(
+      'Author/maintainer of R packages `cbmisc`, `wrecipe`, and other',
+      'proprietary company packages.'
+    )
+  )
+)
+software <- list(
+  Details = c(NA, NA, 'Software', NA),
+  Bullets = c(
+    paste(
+      'Proficient in all Microsoft Office applications including PowerPivot',
+      'and PowerQuery.'
+    ),
+    paste(
+      'Exposed to actuarial modeling softwares MG-ALFA and Prophet as well as',
+      'statistical softwares SAS and Minitab.'
+    )
+  )
+)
+make_detailed_section(prog_langs, packages, software)
+```
+
+# Volunteer Positions
+
+```{r}
+camp_qual <- list(
+  Details = c(
+    'Companion',
+    'June 2015',
+    'Camp Quality',
+    'Kansas City, Missouri'
+  ),
+  Bullets = c(
+    paste(
+      'Engaged children who have had or have cancer in fun activities striving',
+      'to let kids with cancer be kids again.'
+    )
+  )
+)
+
+habitat <- list(
+  Details = c(
+    'Builder',
+    'January 2018',
+    'Habitat for Humanity',
+    'Lincoln, Nebraska'
+  ),
+  Bullets = c(
+    'Helped paint newly constructed residences for community members in need.'
+  )
+)
+make_detailed_section(habitat, camp_qual)
+```

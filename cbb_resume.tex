@@ -1,0 +1,199 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt,a4paper,]{awesome-cv}
+
+% Configure page margins with geometry
+\usepackage{geometry}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\definecolor{awesome}{HTML}{414141}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\name{}{Cody B. Buehler}
+
+
+\mobile{816-558-2679}
+\email{\href{mailto:cb12991@me.com}{\nolinkurl{cb12991@me.com}}}
+\homepage{codybuehler.me}
+\github{cb12991}
+\linkedin{codybuehler}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+
+\usepackage{booktabs}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+
+% Pandoc CSL macros
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{2em}
+\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\honortitlestyle{#1}}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\honordatestyle{#1}}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {January 2023}
+    { Cody B. Buehler~~~·~~~Resume}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+
+\hypertarget{work-experience}{%
+\section{Work Experience}\label{work-experience}}
+
+\begin{cventries}
+    \cventry{Sr. Actuarial Associate - Experience Studies and Assumption Setting, Corporate Actuarial}{Ameritas Life Insurance Corporation - Full Time}{Lincoln, Nebraska}{October 2021 – Present}{\begin{cvitems}
+\item Review corporate assumptions in-depth.
+\item Develop enhancements to current assumptions using machine learning or  applied statistical theory.
+\item Assist interns with annual updates of corporate assumptions.
+\end{cvitems}}
+    \cventry{Actuarial Associate - Experience Studies and Assumption Setting, Corporate Actuarial}{}{}{September 2020 - October 2021}{\begin{cvitems}
+\item Ran multi-year experience studies for life and annuity products.
+\item Update corporate assumptions using current econmic and company data.
+\item Propose recommendations to corporate subcommittee.
+\end{cvitems}}
+    \cventry{Actuarial Assistant - Valuation, Corporate Actuarial}{}{}{June 2017 – September 2020}{\begin{cvitems}
+\item Assisted valuation team with annual and quarterly reporting obligations.
+\item Compiled monthly in-force report to company officials and associates.
+\item Responded to industry survey requests as well as internal/external audits.
+\end{cvitems}}
+    \cventry{Underwriting Coordinator - Business Development Underwriting}{}{}{July 2016 - June 2017}{\begin{cvitems}
+\item Coordinated delivery of required documents for group dental and vision insurance requests for proposal.
+\item Developed macros to help team reduce turn-around-times and a front-end GUI, back-end database for the tracking of sold cases.
+\end{cvitems}}
+    \cventry{Sacker/Cashier/Stocker/Grocery Clerk/Meat Cutter}{Roger’s Green Hills - Part Time Academic Year/Full Time}{St. Joseph, Missouri}{June 2007 – August 2016}{\begin{cvitems}
+\item Provided excellent customer service for customers.
+\item Progressed through multiple departments, each having additional responsibilities.
+\item Guided new employees during the onboarding process.
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+\begin{cventries}
+    \cventry{Master of Science - Actuarial Science Major, Statistics \& Finance Minors}{University of Nebraska - Lincoln}{Lincoln, Nebraska}{August 2016 - May 2018}{}\vspace{-4.0mm}
+    \cventry{Bachelor of Science - Mathematics Major}{Missouri Western State University}{St. Joseph, Missouri}{August 2011 - May 2015}{}\vspace{-4.0mm}
+\end{cventries}
+
+\hypertarget{technical-skills}{%
+\section{Technical Skills}\label{technical-skills}}
+
+\begin{cventries}
+    \cventry{}{Programming Languages}{}{}{\begin{cvitems}\vspace{-4.0mm}
+\item Specializing in R.
+\item Proficient in Python, SQL, VBA, Markdown, and Git.
+\item Experience with Java, Bash/shell scripting, M (PowerQuery), LaTeX, and HTML.
+\end{cvitems}}
+    \cventry{}{Package Development}{}{}{\begin{cvitems}\vspace{-4.0mm}
+\item Author/maintainer of R package `expstudy` (available on CRAN).
+\item Author/maintainer of R packages `cbmisc`, `wrecipe`, and other proprietary company packages.
+\end{cvitems}}
+    \cventry{}{Software}{}{}{\begin{cvitems}\vspace{-4.0mm}
+\item Proficient in all Microsoft Office applications including PowerPivot and PowerQuery.
+\item Exposed to actuarial modeling softwares MG-ALFA and Prophet as well as statistical softwares SAS and Minitab.
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{volunteer-positions}{%
+\section{Volunteer Positions}\label{volunteer-positions}}
+
+\begin{cventries}
+    \cventry{Builder}{Habitat for Humanity}{Lincoln, Nebraska}{January 2018}{\begin{cvitems}
+\item Helped paint newly constructed residences for community members in need.
+\end{cvitems}}
+    \cventry{Companion}{Camp Quality}{Kansas City, Missouri}{June 2015}{\begin{cvitems}
+\item Engaged children who have had or have cancer in fun activities striving to let kids with cancer be kids again.
+\end{cvitems}}
+\end{cventries}
+
+
+
+\end{document}
